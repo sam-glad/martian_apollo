@@ -1,2 +1,14 @@
-<h1>HelpRequests#index</h1>
-<p>Find me in app/views/help_requests/index.html.erb</p>
+<h2>Help Requests</h2>
+
+<ol>
+  <% @help_requests.each do |hr| %>
+    <li><strong><%= hr.subject %></strong> by <%= hr.user.name %></li>
+    <ul>
+      <li>Description: <%= hr.description %></li>
+      <li>Searched: <%= hr.searched %></li>
+      <li>Problem: <%= hr.problem %></li>
+      <li>Assigned to: <%= hr.assigned_to %></li>
+      <li>State: <%= hr.state %></li>
+    </ul>
+  <% end %>
+</ol>
