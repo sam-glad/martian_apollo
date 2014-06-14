@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Martian Apollo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag "app" %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<div class="top-bar">
+  <div class="container">
+    <a class="logo" href="/"><span style="padding-left:10px">
+    Martian Apollo</a></span>
+
+    <ul class="top-bar-section">
+      <li><a href="/help_requests/">Help Requests</a></li>
+      <li><span style="padding-right:10px">
+      <a href="/help_requests/new">Get Help!</a></span></li>
+    </ul>
+  </div>
+</div>
 
 <% if flash.any? %>
   <div class="flash">
