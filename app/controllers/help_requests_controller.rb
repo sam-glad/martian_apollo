@@ -7,9 +7,25 @@ class HelpRequestsController < ApplicationController
     @help_request = HelpRequest.find(params[:id])
   end
 
-  def new
+  def create
+    @help_request = HelpRequest.new(help_request_params)
+
+    if @help_request.save
+      redirect_to help_request_path(@help_request)
+    else
+      render :new
+    end
   end
 
-  def create
+  def new
+    @help_request = HelpRequest.new
   end
+
+  private
+
+  def help_request_params
+    params.require(:help_request).permit(
+      :subject, :description, :searched, :problem)
+  end
+
 end
