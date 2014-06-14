@@ -5,6 +5,7 @@ class HelpRequestsController < ApplicationController
 
   def show
     @help_request = HelpRequest.find(params[:id])
+    @comment = Comment.new
   end
 
   def create

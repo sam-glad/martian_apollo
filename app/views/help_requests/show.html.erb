@@ -17,4 +17,31 @@
   <% end %>
 </ol>
 
+<h3>Submit a Comment</h3>
+
+<%= form_for [@help_request, @comment] do |f| %>
+
+  <% if @comment.errors.any? %>
+    <p>There were errors with your submission:</p>
+    <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>
+
 <a href="/help_requests/">Back to Help Requests</a>
