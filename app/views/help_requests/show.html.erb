@@ -8,4 +8,13 @@
   <li>State: <%= @help_request.state %></li>
 </ul>
 
+<h3>Comments</h3>
+
+<ol>
+  <% @help_request.comments.each do |c| %>
+    <li><%= c.title %><li>
+    <%= c.body %>
+  <% end %>
+</ol>
+
 <a href="/help_requests/">Back to Help Requests</a>
