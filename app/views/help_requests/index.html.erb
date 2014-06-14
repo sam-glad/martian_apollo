@@ -2,13 +2,8 @@
 
 <ol>
   <% @help_requests.each do |hr| %>
-    <li><strong><%= hr.subject %></strong> by <%= hr.user.name %></li>
-    <ul>
-      <li>Description: <%= hr.description %></li>
-      <li>Searched: <%= hr.searched %></li>
-      <li>Problem: <%= hr.problem %></li>
-      <li>Assigned to: <%= hr.assigned_to %></li>
-      <li>State: <%= hr.state %></li>
-    </ul>
+    <li><%= link_to hr.subject, help_request_path(hr) %>
+         by <%= hr.user.name %>
+    </li>
   <% end %>
 </ol>
