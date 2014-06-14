@@ -7,20 +7,21 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def new
+    @comment = Comment.new
+  end
+
   def create
     @comment = Comment.new(comment_params)
     @help_request = HelpRequest.find(params[:help_request_id])
     @comment.help_request = @help_request
 
     if @comment.save
-      redirect_to help_request_path(@help_request)
+      flash[:notice] = "Your comment has been saved!"
     else
-      render :new
+      flash[:notice] = "Oops. You didn't enter a comment!"
     end
-  end
-
-  def new
-    @comment = Comment.new
+    redirect_to help_request_path(@help_request)
   end
 
   private

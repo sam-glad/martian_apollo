@@ -12,8 +12,7 @@
 
 <ol>
   <% @help_request.comments.each do |c| %>
-    <li><%= c.title %><li>
-    <%= c.body %>
+    <li><%= c.body %></li>
   <% end %>
 </ol>
 
@@ -29,11 +28,6 @@
       <% end %>
     </ul>
   <% end %>
-
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
 
   <div>
     <%= f.label :body %>
