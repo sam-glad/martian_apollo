@@ -12,8 +12,10 @@ class HelpRequestsController < ApplicationController
     @help_request = HelpRequest.new(help_request_params)
 
     if @help_request.save
+      flash[:notice] = "Help request sent!"
       redirect_to help_request_path(@help_request)
     else
+      flash[:notice] = "Oops! Please enter a subject and description."
       render :new
     end
   end
