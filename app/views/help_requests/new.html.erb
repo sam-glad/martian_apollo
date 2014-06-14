@@ -2,15 +2,6 @@
 
 <%= form_for [@help_request] do |f| %>
 
-  <% if @help_request.errors.any? %>
-    <p>There were errors with your submission:</p>
-    <ul>
-      <% @help_request.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-
   <div>
     <%= f.label :subject %>
     <%= f.text_field :subject %>
