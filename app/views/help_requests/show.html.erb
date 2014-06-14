@@ -20,15 +20,6 @@
 
 <%= form_for [@help_request, @comment] do |f| %>
 
-  <% if @comment.errors.any? %>
-    <p>There were errors with your submission:</p>
-    <ul>
-      <% @comment.errors.full_messages.each do |msg| %>
-        <%= msg %>
-      <% end %>
-    </ul>
-  <% end %>
-
   <div>
     <%= f.label :body %>
     <%= f.text_area :body %>
