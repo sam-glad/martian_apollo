@@ -2,8 +2,10 @@
 
 <ol>
   <% @help_requests.each do |hr| %>
-    <li><%= link_to hr.subject, help_request_path(hr) %>
-         by <%= hr.user.name %>
+    <li>
+      <%= link_to hr.subject, help_request_path(hr) %>
     </li>
   <% end %>
 </ol>
+
+<a href="/help_requests/new">Submit a new Help Request</a>
