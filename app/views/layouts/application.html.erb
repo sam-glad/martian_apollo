@@ -19,6 +19,12 @@
       <li><a href="/help_requests/">Help Requests</a></li>
       <li><span style="padding-right:10px">
       <a href="/help_requests/new">Get Help!</a></span></li>
+      <% if current_user %>
+        Welcome <%= current_user.username %>!
+        <%= link_to "Sign out", signout_path %>
+      <% else %>
+        <li><%= link_to "Sign in", "/auth/github" %></li>
+      <% end %>
     </ul>
   </div>
 </div>
