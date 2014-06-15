@@ -1,9 +1,36 @@
 <h2>Help Requests</h2>
 
-<ol>
-  <% @help_requests.each do |hr| %>
-    <li>
-      <%= link_to hr.subject, help_request_path(hr) %>
-    </li>
-  <% end %>
-</ol>
+<div>
+  <table>
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>State</th>
+        <th>Subject</th>
+        <th>Age</th>
+        <th>Assigned to</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @help_requests.each do |hr| %>
+        <tr>
+          <td>
+            <%= hr.user %>
+          </td>
+          <td>
+            <%= hr.state %>
+          </td>
+          <td>
+            <%= link_to hr.subject, help_request_path(hr) %>
+          </td>
+          <td>
+            TODO hr.age
+          </td>
+          <td>
+            <%= hr.assigned_to %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+</div>
